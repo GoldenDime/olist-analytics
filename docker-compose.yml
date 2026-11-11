@@ -1,0 +1,13 @@
+# Metabase для дашборда. База olist должна работать на хосте (localhost:5432),
+# с пользователем metabase / metabase и базой metabase_app (см. README).
+services:
+  metabase:
+    image: metabase/metabase:v0.50.36
+    network_mode: host
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_HOST: 127.0.0.1
+      MB_DB_PORT: 5432
+      MB_DB_DBNAME: metabase_app
+      MB_DB_USER: metabase
+      MB_DB_PASS: metabase
